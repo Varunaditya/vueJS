@@ -1,0 +1,38 @@
+##########
+HTML
+##########
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+  <button v-on:click = "increaseCounter()">Increase</button>
+  <button v-on:click = "decreaseCounter()">Decrease</button>
+  <button v-on:click = "resetCounter()">RESET</button>
+  
+  <p>{{ counter }}</p>
+</div>
+
+
+##########
+JavaScript
+##########
+
+new Vue({
+	el: "#app",
+  data: {
+  	counter : 0
+  },
+  methods: {
+  	increaseCounter : function() {
+    	this.counter++;
+    },
+    decreaseCounter : function() {
+    	if(this.counter > 0){
+      	this.counter--;
+      }
+    },
+    resetCounter : function() {
+      	this.counter = 0;
+      }
+    }
+});
